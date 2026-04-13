@@ -1,7 +1,7 @@
 [Adblock Plus 2.0]
-! Title: Adblock Filter Common
+! Title: CK Adblock Filter - Common
 ! Expires: 3 hours (update frequency)
-! Version: 1.0
+! Version: 1.1
 !-------------------------------------------------------------------------------
 
 ! 공통(1)
