@@ -1,7 +1,7 @@
 [Adblock Plus 2.0]
 ! Title: CK Adblock Filter - Common
 ! Expires: 3 hours (update frequency)
-! Version: 1.1
+! Version: 1.2
 !-------------------------------------------------------------------------------
 
 ! 공통(1)
@@ -44,6 +44,8 @@ etoland.co.kr##[class*="google"]
 etoland.co.kr###underGoodBtn_freeRecharge
 etoland.co.kr##.log_banner
 etoland.co.kr##.write_content ~ div
+etoland.co.kr##li.border-etoDivider-1.gap-2.justify-between.flex
+etoland.co.kr##li.bg-amber-100\/60
 
 ! 인벤
 inven.co.kr###invenAppSuggestion
@@ -64,3 +66,6 @@ issuelink.co.kr##.container > .row:last-of-type > div:not(:first-of-type)
 !issuelink.co.kr^$document,replace=/_self/_blank/
 ! 이슈링크 - 클릭 이벤트 핸들러 제거
 issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title > a')
+
+m.humoruniv.com###choo_center_div
+m.ppomppu.co.kr###ask_app_usage_popup
