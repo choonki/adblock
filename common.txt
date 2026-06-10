@@ -1,39 +1,7 @@
 [Adblock Plus 2.0]
 ! Title: CK Adblock Filter - Common
 ! Expires: 3 hours (update frequency)
-! Version: 1.6
-!
-! ******************************************************************************
-!
-! 개발자 도구(DevTools) 관련
-!
-! 1. 주요 오픈소스 감지 라이브러리 차단
-||cdn.jsdelivr.net/npm/disable-devtool*$script
-||://unpkg.com
-||disable-devtool*.js$script
-||devtools-detector*.js$script
-||console-ban*.js$script
-!
-! 2. 난독화된 무한 디버거(Debugger) 루프 차단 (Scriptlet 최신화)
-! 2-1. 생성자 함수를 통한 내장 debugger 호출 무력화
-/(toki|sbxh)/##+js(set-constant, Function.prototype.constructor, noopFunc)
-! 2-2. 기본 debugger 구문 차단 및 빈 함수(noop) 대체
-/(toki|sbxh)/##+js(set-constant, debugger, noopFunc)
-! 2-3. 감지용 주기적 인터벌 타이머(setInterval, setTimeout) 강제 해제
-/(toki|sbxh)/##+js(set-constant, devtoolsDetectInterval, noopFunc)
-/(toki|sbxh)/##+js(nosiif, devtoolsDetectInterval)
-!
-! 3. 웹페이지 내장형 감지 스크립트 무력화 (고급 속성 무력화)
-! 3-1. 콘솔창 감지 우회용 기본 API 보존 및 모니터링 무력화
-/(toki|sbxh)/##+js(set-constant, console.profile, noopFunc)
-/(toki|sbxh)/##+js(set-constant, console.table, noopFunc)
-/(toki|sbxh)/##+js(set-constant, console.clear, noopFunc)
-! 3-2. 우클릭 및 키보드 단축키(F12, Ctrl+Shift+I) 방해 이벤트 무력화
-/(toki|sbxh)/##+js(addEventListener-defuser, contextmenu)
-/(toki|sbxh)/##+js(addEventListener-defuser, keydown)
-/(toki|sbxh)/##+js(addEventListener-defuser, keypress)
-!
-! ******************************************************************************
+! Version: 1.7
 !
 ! 공통(1)
 ##[id^="hd_pop"]
