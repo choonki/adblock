@@ -1,7 +1,7 @@
 [Adblock Plus 2.0]
 ! Title: CK Adblock Filter - Common
 ! Description: uBO, AdGuard, Unicorn Pro 공통 지원 필터
-! Version: 1.7.3
+! Version: 1.7.4
 ! Expires: 6 hours
 ! Homepage: https://github.com/choonki/adblock
 ! Source: https://raw.githubusercontent.com/choonki/adblock/main/common.txt
@@ -55,21 +55,13 @@ inven.co.kr##[id^="mobileTailAd"]
 inven.co.kr##[class^="mobileTopAd"]
 inven.co.kr##[class^="mobileTailAd"]
 
-! 이슈링크 기본 차단
+! [이슈링크] 기본 차단 규칙
 issuelink.co.kr###recommandVideo
 issuelink.co.kr###toast-container
 issuelink.co.kr##.container > .row:nth-of-type(2):not(:last-of-type)
 issuelink.co.kr##.container > .row:nth-of-type(3) tr:nth-of-type(6)
 issuelink.co.kr##.container > .row:last-of-type > div:not(:first-of-type)
-
-! [이슈링크 - 타겟 변경] uBlock Origin 전용
-issuelink.co.kr##+js(set-attr, span.title a, target, _blank)
-
-! [이슈링크 - 타겟 변경] AdGuard 및 유니콘 프로 공통 전용
-issuelink.co.kr#%#//scriptlet('set-attr', 'span.title a', 'target', '_blank')
-
-! [이슈링크 - 클릭 이벤트 핸들러 제거] uBlock Origin 전용
-issuelink.co.kr##+js(remove-attr, onclick, span.title a)
-
-! [이슈링크 - 클릭 이벤트 핸들러 제거] AdGuard 및 유니콘 프로 공통 전용
-issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title a')
+! 이슈링크 - 타겟 변경
+!issuelink.co.kr^$document,replace=/_self/_blank/
+! 이슈링크 - 클릭 이벤트 핸들러 제거
+issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title > a')
