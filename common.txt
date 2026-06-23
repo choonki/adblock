@@ -1,8 +1,12 @@
 [Adblock Plus 2.0]
 ! Title: CK Adblock Filter - Common
-! Expires: 3 hours (update frequency)
-! Version: 1.7
+! Description: uBO, AdGuard, Unicorn Pro 공통 지원 필터
+! Version: 1.7.2
+! Expires: 6 hours
+! Homepage: https://github.com/choonki/adblock
+! Source: https://raw.githubusercontent.com/choonki/adblock/main/common.txt
 !
+
 ! 공통(1)
 ##[id^="hd_pop"]
 ##[id^="banner"]
@@ -57,7 +61,9 @@ issuelink.co.kr###toast-container
 issuelink.co.kr##.container > .row:nth-of-type(2):not(:last-of-type)
 issuelink.co.kr##.container > .row:nth-of-type(3) tr:nth-of-type(6)
 issuelink.co.kr##.container > .row:last-of-type > div:not(:first-of-type)
-! 이슈링크 - 타겟 변경
-!issuelink.co.kr^$document,replace=/_self/_blank/
-! 이슈링크 - 클릭 이벤트 핸들러 제거
-issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title > a')
+
+! 이슈링크 - 타겟 변경 (uBO 호환 문법)
+||issuelink.co.kr^$document,replace=/_self/_blank/
+
+! 이슈링크 - 클릭 이벤트 핸들러 제거 (uBO 호환 문법)
+issuelink.co.kr##span.title > a:remove-attr(onclick)
