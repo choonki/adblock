@@ -1,6 +1,6 @@
 ! Title: CK Adguard Filter
 ! Description: CK 광고 차단 필터
-! Version: 1.3
+! Version: 1.4
 ! Expires: 3 hours
 ! Homepage: https://github.com/choonki/adblock
 
