@@ -1,10 +1,10 @@
 ! Title: CK Adblock Filter
 ! Description: CK 광고 차단 필터
-! Version: 1.0
+! Version: 1.1
 ! Expires: 3 hours
 ! Homepage: https://github.com/choonki/adblock
 
-! 공통(1) - 속성 시작/끝 일치 규칙
+! 공통(1) - 요소 숨김 규칙 (AdGuard 전용 표준)
 ##[id^="hd_pop"]
 ##[id^="banner"]
 ##[class^="hd_pop"]
@@ -52,15 +52,15 @@ inven.co.kr##[id^="mobileTailAd"]
 inven.co.kr##[class^="mobileTopAd"]
 inven.co.kr##[class^="mobileTailAd"]
 
-! 이슈링크 기본 차단 규칙
+! 이슈링크 차단 규칙
 issuelink.co.kr###recommandVideo
 issuelink.co.kr###toast-container
 issuelink.co.kr##.container > .row:nth-of-type(2):not(:last-of-type)
 issuelink.co.kr##.container > .row:nth-of-type(3) tr:nth-of-type(6)
 issuelink.co.kr##.container > .row:last-of-type > div:not(:first-of-type)
 
-! 이슈링크 - 타겟 변경 (AdGuard 문법)
-issuelink.co.kr$$script:replace(/_self/g, '_blank')
+! 이슈링크 - 타겟 변경
+||issuelink.co.kr^$document,replace=/_self/_blank/
 
-! 이슈링크 - 클릭 이벤트 핸들러 제거 (AdGuard 전용 스크립틀릿)
-issuelink.co.kr#%#AdGuard.scriptlets.removeAttr('onclick', 'span.title > a');
+! 이슈링크 - 클릭 이벤트 핸들러 제거
+issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title > a')
