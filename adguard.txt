@@ -1,4 +1,4 @@
-! Title: CK Adblock Filter
+! Title: CK Adguard Filter
 ! Description: CK 광고 차단 필터
 ! Version: 1.3
 ! Expires: 3 hours
