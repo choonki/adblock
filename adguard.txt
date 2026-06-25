@@ -1,6 +1,6 @@
 ! Title: CK Adblock Filter
 ! Description: CK 광고 차단 필터
-! Version: 1.2
+! Version: 1.3
 ! Expires: 3 hours
 ! Homepage: https://github.com/choonki/adblock
 
@@ -60,9 +60,7 @@ issuelink.co.kr##.container > .row:nth-of-type(3) tr:nth-of-type(6)
 issuelink.co.kr##.container > .row:last-of-type > div:not(:first-of-type)
 
 ! 이슈링크 - 타겟 변경
-||issuelink.co.kr^$document,replace=/_self/_blank/g
+||issuelink.co.kr^$document,replace=/_self/_blank/
 
-! 이슈링크 - 클릭 이벤트 핸들러 제거 (Adguard 구형 문법이거나 타 차단기 호환용)
-!issuelink.co.kr#%#//scriptlet('remove-attr', 'onclick', 'span.title > a')
-! 이슈링크 - 클릭 이벤트 핸들러 제거 (Adguard 현재 공식 단축 문법)
+! 이슈링크 - 클릭 이벤트 핸들러 제거
 issuelink.co.kr##+js(remove-attr, onclick, span.title > a)
